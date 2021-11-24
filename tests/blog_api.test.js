@@ -51,6 +51,11 @@ test ('a blog can be added', async() => {
   expect(contents).toContain('how to be more flexible')
 })
 
+test ('each blog has its own id', async() => {
+  const response = await api.get('/api/blogs')
+  expect(response.body[0].id).toBeDefined()
+})
+
 afterAll(() => {
   mongoose.connection.close()
 })
