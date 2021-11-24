@@ -4,10 +4,10 @@
   "description": "blog roll",
   "main": "node index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development nodemon index.js",
     "lint": "eslint .",
-    "test": "jest --verbose"
+    "test": "NODE_ENV=test jest --verbose --runInBand"
   },
   "author": "Dana Chen",
   "license": "MIT",
@@ -22,7 +22,8 @@
   "devDependencies": {
     "eslint": "^8.3.0",
     "eslint-plugin-react": "^7.27.1",
-    "jest": "^27.3.1"
+    "jest": "^27.3.1",
+    "supertest": "^6.1.6"
   },
   "jest": {
     "testEnvironment": "node"
